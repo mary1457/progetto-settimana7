@@ -47,7 +47,7 @@ function creaCard() {
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="backoffice.html?id=${product._id}">Edit</a></div>
                             </div>
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><button class="btn btn-outline-dark mt-auto"  onclick="deleteEvent()">Delete</button></div>
+                                <div class="text-center"><button class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete</button></div>
                             </div>
                         </div>
                     </div>

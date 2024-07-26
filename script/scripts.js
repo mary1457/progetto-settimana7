@@ -1,5 +1,8 @@
 
+const spinner = document.getElementById("spinner")
+
 const getProduct = function () {
+    spinner.hidden=false
     // fetch!
     const URL = 'https://striveschool-api.herokuapp.com/api/product/'
     fetch(URL, {
@@ -21,7 +24,7 @@ const getProduct = function () {
         .then((arrayOfProduct) => {
             console.log('EVENTI A DB', arrayOfProduct)
 
-           
+           spinner.hidden=true
             arrayOfProduct.forEach((product) => {
                 
                 const newEventCol = `
