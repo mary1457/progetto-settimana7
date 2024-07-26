@@ -9,7 +9,8 @@ class Product {
   }
 }
 
-
+const modal = new bootstrap.Modal(document.getElementById("staticBackdrop1"))
+const errormodal = new bootstrap.Modal(document.getElementById("staticBackdrop2"))
 const nameInput = document.getElementById('name')
 const descriptionInput = document.getElementById('description')
 const brandInput = document.getElementById('brand')
@@ -73,9 +74,9 @@ eventForm.addEventListener('submit', function (e) {
   )
  let URL = 'https://striveschool-api.herokuapp.com/api/product/'
   let methodToUse = "POST"
-  let risultato = "PRODOTTO SALVATO!"
+  
     if (id) {
-     risultato="PRODOTTO MODIFICATO!"
+     
       methodToUse = 'PUT'
       URL = URL +id
     } 
@@ -95,10 +96,10 @@ eventForm.addEventListener('submit', function (e) {
     .then((response) => {
       if (response.ok) {
 
-        alert(risultato)
+       modal.show()
       } else {
 
-        alert('ERRORE NEL SALVATAGGIO!')
+        errormodal.show()
         throw new Error('Errore nel salvataggio del prodotto')
       }
     })

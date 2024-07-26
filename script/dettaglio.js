@@ -1,7 +1,7 @@
 const addressBarParameters = new URLSearchParams(location.search)
 const id = addressBarParameters.get('id')
 const eventsRow = document.getElementById('events-row')
-
+const errormodal = new bootstrap.Modal(document.getElementById("staticBackdrop3"))
 function creaCard() {
     const URL = "https://striveschool-api.herokuapp.com/api/product/"+id
     fetch(URL, {
@@ -81,9 +81,8 @@ const deleteEvent = function () {
     }) 
       .then((response) => {
         if (response.ok) {
-        
-          alert('PRODOTTO ELIMINATO')
-          location.assign('./index.html') 
+        errormodal.show()
+           
         } else {
           
           throw new Error("Problema nell'eliminazione")
@@ -93,3 +92,7 @@ const deleteEvent = function () {
         console.log('error', err)
       })
   }
+
+function goHome ( ) {
+    location.assign('./index.html')
+}
