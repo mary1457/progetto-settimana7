@@ -13,7 +13,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body>
+    <body class="w-100 h-100 d-flex flex-column" >
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
@@ -46,7 +46,7 @@
         <!-- Header-->
        
         <!-- Section-->
-        <section class="py-5">
+        <section class="py-5 flex-grow-1">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <div class="col mb-5">
@@ -73,7 +73,7 @@
                               <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" id="price" required min="1">
                               <span class="input-group-text">.00</span>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" id="btnsubmit">Save</button>
                             <button type="button" class="btn btn-success" onclick="reset()">Reset</button>
                           </form>
                         
@@ -87,9 +87,9 @@
             </div>
         </section>
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
+        <footer class="py-5 bg-dark ">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Pailletés 2024</p></div>
-        </footer>
+        </footer >
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->

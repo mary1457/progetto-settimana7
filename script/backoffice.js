@@ -15,12 +15,15 @@ const descriptionInput = document.getElementById('description')
 const brandInput = document.getElementById('brand')
 const imgInput = document.getElementById('img')
 const priceInput = document.getElementById('price')
-
+const btnsubmit =document.getElementById("btnsubmit")
 
 const id = new URLSearchParams(location.search).get('id')
 
 if (id) {
+ btnsubmit.textContent="Edit"
+
   const URL = "https://striveschool-api.herokuapp.com/api/product/" + id
+
   fetch(URL, {
     headers: {
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmEzNTUzNGYyNjBjYzAwMTVjYzBkZDIiLCJpYXQiOjE3MjE5ODAyMTIsImV4cCI6MTcyMzE4OTgxMn0.mp6w0WMuZsehfSzj6a8XRuvz4GeNx-vx2YG7LyR88ho",
@@ -70,8 +73,9 @@ eventForm.addEventListener('submit', function (e) {
   )
  let URL = 'https://striveschool-api.herokuapp.com/api/product/'
   let methodToUse = "POST"
+  let risultato = "PRODOTTO SALVATO!"
     if (id) {
-     
+     risultato="PRODOTTO MODIFICATO!"
       methodToUse = 'PUT'
       URL = URL +id
     } 
@@ -91,7 +95,7 @@ eventForm.addEventListener('submit', function (e) {
     .then((response) => {
       if (response.ok) {
 
-        alert('PRODOTTO SALVATO!')
+        alert(risultato)
       } else {
 
         alert('ERRORE NEL SALVATAGGIO!')

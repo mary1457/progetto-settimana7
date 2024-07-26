@@ -41,9 +41,9 @@ const getProduct = function () {
                                 </div>
                             </div>
                             <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="dettaglio.html?id=${product._id}">View details</a></div>
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="backoffice.html?id=${product._id}">Edit</a></div>
+                            <div class="card-footer pt-0 border-top-0 bg-transparent">
+                                <div class="text-center p-4 pt-0"><a class="btn btn-outline-dark mt-auto" href="dettaglio.html?id=${product._id}">View details</a></div>
+                                <div class="text-center p-4 pt-0"><a class="btn btn-outline-dark mt-auto" href="backoffice.html?id=${product._id}">Edit</a></div>
                             </div>
                         </div>
                     </div>
